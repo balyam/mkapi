@@ -1,0 +1,1 @@
+Do custom command "load_to_db" before start app

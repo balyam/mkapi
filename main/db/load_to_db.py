@@ -6,7 +6,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
 path_to_json = BASE_DIR / "main/uploads/Branches.json"
 
 with open(path_to_json, encoding='utf-8-sig') as json_file:
@@ -54,8 +53,6 @@ else:
 
         for obj in jsonObject['branches']:
             insert_objects.append(insert_row(obj))
-            # for elt, val in obj.items():
-            #     print(elt, val, end='\n')
 
         bulk_create_objects = [BranchModel(**vals) for vals in insert_objects]
         BranchModel.objects.bulk_create(bulk_create_objects)
