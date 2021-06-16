@@ -15,5 +15,5 @@ class BranchViewSet(viewsets.ModelViewSet):
         city = self.request.query_params.get('city')
         alias = self.request.query_params.get('branch')
         if city is not None:
-            queryset = queryset.filter(city_ru__iexact=city).filter(address_ru__icontains=alias)
+            queryset = queryset.filter(city_ru__iexact=city).filter(Q(address_ru__icontains=alias) | Q(alias__icontains=alias))[:5]
         return queryset
