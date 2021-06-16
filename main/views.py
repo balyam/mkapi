@@ -7,9 +7,8 @@ from django.db.models import Q
 # Create your views here.
 
 class BranchViewSet(viewsets.ModelViewSet):
-    #queryset = BranchModel.objects.all().order_by('city_ru')
     serializer_class = BranchSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         queryset = BranchModel.objects.all()
