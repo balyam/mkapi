@@ -8,7 +8,7 @@ from django.db.models import Q
 
 class BranchViewSet(viewsets.ModelViewSet):
     serializer_class = BranchSerializer
-    #permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
         queryset = BranchModel.objects.all()
