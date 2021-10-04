@@ -4,4 +4,4 @@ from .models import BranchModel
 class BranchSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = BranchModel
-        fields = ['city_ru', 'address_ru', 'RezhimRabotyLeto', 'alias', 'Vyhodnye', 'RezhimRabotyZima']
+        fields = ['city_ru', 'address_ru', 'RezhimRabotyLeto', 'alias', 'Vyhodnye', 'RezhimRabotyZima',]
